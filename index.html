@@ -17,7 +17,7 @@ function show(){var k=(location.hash||"").slice(1);if(!P[k]||k==="cws-demo-ui")k
 var h=P[k];if(h.indexOf('src="cws-demo-ui.html"')>-1)h=h.replace('src="cws-demo-ui.html"','srcdoc="'+esc(P["cws-demo-ui"])+'"');
 f.srcdoc=h;var m=P[k].match(/<title>([\s\S]*?)<\/title>/);if(m)document.title=m[1].trim()}
 addEventListener("hashchange",show);
-addEventListener("message",function(e){if(e.source===f.contentWindow&&e.data&&e.data.nav){var k=e.data.nav;if(("#"+k)===location.hash||(!location.hash&&k==="index"))show();else location.hash=k}});
+addEventListener("message",function(e){if(e.source===f.contentWindow&&e.data&&e.data.nav){var k=e.data.nav;if(k==="cv"){window.open(location.href.split("#")[0]+"#cv","_blank","noopener");return}if(("#"+k)===location.hash||(!location.hash&&k==="index"))show();else location.hash=k}});
 show();
 </script></body></html>
 </body></html>
